@@ -1431,7 +1431,12 @@ iterRunes:
 			if i-p.offseti < 4 {
 				p.set(p.offseti, "-07")
 			} else {
-				p.set(p.offseti, "-0700")
+				// FIXME: workaround for a bug in time.Parse: https://play.golang.org/p/oipRJMHeSOX
+				if string(p.format[p.offseti+1:i]) == "0000" {
+					p.set(p.offseti, strings.Repeat(" ", len("-0700")))
+				} else {
+					p.set(p.offseti, "-0700")
+				}
 			}
 
 		case timePeriod:

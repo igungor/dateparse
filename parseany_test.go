@@ -64,6 +64,8 @@ var testInputs = []dateTest{
 	// ??
 	{in: "Fri Jul 03 2015 18:04:07 GMT+0100 (GMT Daylight Time)", out: "2015-07-03 17:04:07 +0000 UTC"},
 	{in: "Fri Jul 3 2015 06:04:07 GMT+0100 (GMT Daylight Time)", out: "2015-07-03 05:04:07 +0000 UTC"},
+	{in: "Fri Sep 06 2019 11:19:36 GMT+0000", out: "2019-09-06 11:19:36 +0000 UTC"},
+
 	{in: "Fri Jul 3 2015 06:04:07 PST-0700 (Pacific Daylight Time)", out: "2015-07-03 13:04:07 +0000 UTC"},
 	// Month dd, yyyy at time
 	{in: "September 17, 2012 at 5:00pm UTC-05", out: "2012-09-17 17:00:00 +0000 UTC"},
